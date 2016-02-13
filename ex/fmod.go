@@ -2,6 +2,7 @@ package fmod_ex
 
 // #cgo windows LDFLAGS: ../lib/windows/fmod_event.dll ../lib/windows/fmodex.dll
 // #cgo darwin  LDFLAGS: -Llib -lfmodex
+// #cgo linux   LDFLAGS: -Llib -lfmodex64
 // #cgo CFLAGS: -Iinc
 // #include "fmod.h"
 // #include "fmod_errors.h"
