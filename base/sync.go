@@ -1,7 +1,7 @@
 package base
 
 import (
-  "runtime"
+	"runtime"
 )
 
 var critical_in chan func()
@@ -10,19 +10,19 @@ var critical_out chan struct{}
 // Runs the func, f, on the fmod thread, which is locked to an Os thread.
 // This function does not return until after f has returned.
 func Thread(f func()) {
-  critical_in <- f
-  <-critical_out
+	critical_in <- f
+	<-critical_out
 }
 
 func init() {
-  critical_in = make(chan func())
-  critical_out = make(chan struct{})
-  go func() {
-    runtime.LockOSThread()
-    for {
-      f := <-critical_in
-      f()
-      critical_out <- struct{}{}
-    }
-  }()
+	critical_in = make(chan func())
+	critical_out = make(chan struct{})
+	go func() {
+		runtime.LockOSThread()
+		for {
+			f := <-critical_in
+			f()
+			critical_out <- struct{}{}
+		}
+	}()
 }

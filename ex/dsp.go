@@ -4,5 +4,5 @@ package fmod_ex
 import "C"
 
 type Dsp struct {
-  dsp *C.FMOD_DSP
+	dsp *C.FMOD_DSP
 }

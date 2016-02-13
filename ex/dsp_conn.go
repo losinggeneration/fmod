@@ -4,5 +4,5 @@ package fmod_ex
 import "C"
 
 type DspConn struct {
-  conn *C.FMOD_DSPCONNECTION
+	conn *C.FMOD_DSPCONNECTION
 }
