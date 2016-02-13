@@ -1,7 +1,5 @@
 package fmod_event
 
-// #cgo LDFLAGS: -Llib -lfmodevent -lfmodex
-// #cgo CFLAGS: -Iinc -I../ex/inc
 // #include "fmod_event.h"
 // #include "stdlib.h"
 import "C"
