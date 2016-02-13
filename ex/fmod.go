@@ -15,7 +15,7 @@ import (
 	"github.com/MobRulesGames/fmod/base"
 )
 
-const null = unsafe.Pointer(uintptr(0))
+var null = unsafe.Pointer(uintptr(0))
 
 func makeNullTerminatedBytes(s string) []byte {
 	b := make([]byte, len(s)+1)
